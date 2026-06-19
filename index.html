@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>乐鱼体育 · 信息索引与资料整理</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #1e1e2a;
+            background-color: #f5f3f0;
+            padding: 0 16px;
+        }
+
+        .page-wrap {
+            max-width: 820px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.04);
+            border-radius: 24px;
+            overflow: hidden;
+        }
+
+        /* 深色头图 */
+        .hero {
+            background: #10131c;
+            background-image: radial-gradient(ellipse at 30% 60%, #1e2735 0%, #0b0e15 90%);
+            padding: 80px 40px 70px;
+            text-align: center;
+            color: #e6e9f0;
+            position: relative;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 40px;
+            background: linear-gradient(to top, #ffffff, transparent);
+        }
+
+        .hero h1 {
+            font-size: 2.4rem;
+            font-weight: 400;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+            color: #ffffff;
+        }
+
+        .hero .sub-line {
+            font-size: 1.05rem;
+            color: #acb6cc;
+            max-width: 540px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        .hero .sub-line a {
+            color: #b2ccff;
+            text-decoration: underline;
+            text-underline-offset: 4px;
+            font-weight: 500;
+        }
+
+        .hero .sub-line a:hover {
+            color: #d4e2ff;
+        }
+
+        /* 正文区 */
+        .content {
+            padding: 40px 44px 56px;
+        }
+
+        .intro-text {
+            font-size: 1.06rem;
+            color: #262a38;
+            margin-bottom: 30px;
+        }
+
+        .intro-text p {
+            margin-bottom: 18px;
+        }
+
+        .intro-text strong {
+            font-weight: 500;
+            color: #0e1b2e;
+        }
+
+        .features-block {
+            margin: 36px 0 40px;
+            background: #f8f7fc;
+            border-radius: 20px;
+            padding: 28px 32px 28px 40px;
+            border-left: 4px solid #768bb8;
+        }
+
+        .features-block h2 {
+            font-size: 1.3rem;
+            font-weight: 450;
+            color: #1e2538;
+            margin-bottom: 18px;
+            letter-spacing: 0.3px;
+        }
+
+        .features-block ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .features-block li {
+            padding: 8px 0 8px 28px;
+            position: relative;
+            font-size: 1rem;
+            color: #252b3a;
+        }
+
+        .features-block li::before {
+            content: "·";
+            position: absolute;
+            left: 0;
+            color: #768bb8;
+            font-weight: bold;
+            font-size: 1.4rem;
+            line-height: 1;
+        }
+
+        .features-block li span {
+            color: #3b4c6b;
+            font-weight: 450;
+        }
+
+        .scene-note {
+            margin: 32px 0 28px;
+            padding: 20px 24px 22px;
+            background: #f1f3f8;
+            border-radius: 16px;
+            font-size: 0.98rem;
+            color: #1f273b;
+        }
+
+        .scene-note p {
+            margin-bottom: 12px;
+        }
+
+        .scene-note p:last-child {
+            margin-bottom: 0;
+        }
+
+        .faq-summary {
+            margin: 38px 0 24px;
+            border-top: 1px solid #e2e4ea;
+            padding-top: 28px;
+        }
+
+        .faq-summary details {
+            margin-bottom: 12px;
+            padding: 10px 16px;
+            background: #fafafc;
+            border-radius: 12px;
+            border: 1px solid #eaedf2;
+        }
+
+        .faq-summary summary {
+            font-weight: 450;
+            cursor: pointer;
+            color: #1c253b;
+            padding: 4px 0;
+            list-style: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .faq-summary summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .faq-summary summary::before {
+            content: "?";
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 20px;
+            height: 20px;
+            background: #dce2f0;
+            border-radius: 50%;
+            font-weight: 600;
+            color: #2a3752;
+            font-size: 0.85rem;
+            margin-right: 10px;
+            flex-shrink: 0;
+        }
+
+        .faq-summary details p {
+            margin: 8px 0 4px 30px;
+            color: #3c445a;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .closing {
+            margin-top: 36px;
+            padding: 22px 0 10px;
+            border-top: 1px dashed #d6dae4;
+            font-style: normal;
+            color: #2d364b;
+            font-size: 1rem;
+            text-align: center;
+            letter-spacing: 0.3px;
+        }
+
+        .closing a {
+            color: #1f3a6b;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            font-weight: 500;
+        }
+
+        .closing a:hover {
+            color: #0c1f3f;
+        }
+
+        /* 响应式 */
+        @media (max-width: 600px) {
+            body {
+                padding: 0 8px;
+            }
+
+            .hero {
+                padding: 56px 24px 50px;
+            }
+
+            .hero h1 {
+                font-size: 1.9rem;
+            }
+
+            .hero .sub-line {
+                font-size: 0.98rem;
+            }
+
+            .content {
+                padding: 28px 20px 40px;
+            }
+
+            .features-block {
+                padding: 20px 20px 20px 24px;
+                margin: 28px 0;
+            }
+
+            .features-block li {
+                padding-left: 20px;
+                font-size: 0.96rem;
+            }
+
+            .scene-note {
+                padding: 16px 18px;
+            }
+
+            .faq-summary details p {
+                margin-left: 20px;
+            }
+
+            .closing {
+                font-size: 0.95rem;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+
+            .features-block li {
+                font-size: 0.92rem;
+                padding-left: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="page-wrap">
+    <!-- 深色头图 -->
+    <section class="hero">
+        <h1>从资料整理开始</h1>
+        <div class="sub-line">
+            一条关于体育资讯、赛事索引与信息归类的线索 ——
+            <a href="https://homeapp-leyu.com.cn">乐鱼体育</a> 是其中一站。
+        </div>
+    </section>
+
+    <!-- 正文区 -->
+    <div class="content">
+
+        <!-- 开场短句 + 承接 -->
+        <div class="intro-text">
+            <p>翻看一个体育信息页面，有时像打开一份不断更新的手账——标题、比分、赛程、队伍动态，每一条都按自己的方式排列。从资料整理的角度观察，<strong>乐鱼体育</strong> 所提供的界面更像一种信息索引：把分散在多个渠道的赛事内容，用相对清晰的模块梳理在一起。</p>
+            <p>不是每个页面都需要复杂的功能。许多时候，我们只是在找一个确定的赛程时间，或回顾某个联赛的近期走势。当信息以结构化的方式呈现，筛选和对比就变得自然。这也是为什么整理本身，就是一种浏览的起点。</p>
+        </div>
+
+        <!-- 特点列表 (温和叙述) -->
+        <div class="features-block">
+            <h2>整理中的几个细节</h2>
+            <ul>
+                <li><span>赛程归档</span> —— 按日期、联赛、状态分层，适合从时间线切入</li>
+                <li><span>比分摘要</span> —— 简洁展示近期对战结果，省去逐场翻找的步骤</li>
+                <li><span>队伍资料卡</span> —— 汇集阵容、排名与近况，便于横向参考</li>
+                <li><span>跳转链接</span> —— 直接指向相关页面，减少中间层的筛选成本</li>
+            </ul>
+        </div>
+
+        <!-- 场景提示 (温和、非推销) -->
+        <div class="scene-note">
+            <p>如果你习惯在赛前理清对手的近期状态，或者想在赛后快速回顾比分变化——这种索引式的页面布局或许能节省一些时间。每次打开，都是在已有的信息结构里做一次查找与对照。</p>
+            <p>信息本身不会说话，但整理过的排列会帮人更快找到自己关心的那行数据。</p>
+        </div>
+
+        <!-- FAQ 摘要 (两个常见问题) -->
+        <div class="faq-summary">
+            <details>
+                <summary>页面里的资料更新频率如何？</summary>
+                <p>通常随赛事进展同步调整，赛程与比分部分保持动态刷新。具体时效可参考页面标注的更新时间点。</p>
+            </details>
+            <details>
+                <summary>作为信息索引，有什么使用建议？</summary>
+                <p>可按联赛名称或日期范围先行筛选，再关注队伍卡片中的近五场战绩。这种自上而下的整理逻辑，适合快速建立对赛区整体情况的认识。</p>
+            </details>
+        </div>
+
+        <!-- 温和结尾 -->
+        <div class="closing">
+            资料整理是信息的另一种语言。<br>
+            从 <a href="https://homeapp-leyu.com.cn">乐鱼体育</a> 这里，可以开始一次安静的浏览。
+        </div>
+
+    </div>
+    <!-- end content -->
+</div>
+<!-- end page-wrap -->
+
+</body>
+</html>
