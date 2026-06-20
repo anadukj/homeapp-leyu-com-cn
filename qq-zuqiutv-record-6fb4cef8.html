@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>杂志专题 | 足球直播 · 快速识别场次</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #faf8f5;
+            font-family: 'Georgia', 'Times New Roman', '宋体', 'SimSun', serif;
+            color: #2e3b2b;
+            line-height: 1.7;
+            padding: 2rem 1.2rem;
+            max-width: 880px;
+            margin: 0 auto;
+        }
+
+        .magazine-wrapper {
+            background-color: #ffffff;
+            box-shadow: 0 0 0 1px #e6dfd7, 0 12px 28px -10px rgba(60, 50, 40, 0.08);
+            padding: 2.8rem 2.2rem 3rem;
+            border-radius: 28px 28px 12px 12px;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 0.8rem;
+            }
+            .magazine-wrapper {
+                padding: 1.8rem 1.2rem 2.2rem;
+                border-radius: 20px;
+            }
+        }
+
+        .hero-banner {
+            margin: -2.8rem -2.2rem 2rem -2.2rem;
+            padding: 3.2rem 2.2rem 2.4rem;
+            background: linear-gradient(135deg, #f2ede4 0%, #ebe3d8 80%);
+            border-bottom: 1px solid #d7cec1;
+            border-radius: 28px 28px 0 0;
+            text-align: center;
+        }
+
+        @media (max-width: 600px) {
+            .hero-banner {
+                margin: -1.8rem -1.2rem 1.6rem -1.2rem;
+                padding: 2.4rem 1.2rem 1.8rem;
+                border-radius: 20px 20px 0 0;
+            }
+        }
+
+        .hero-banner h1 {
+            font-size: 2.4rem;
+            font-weight: 400;
+            letter-spacing: 0.06em;
+            color: #1f2b1c;
+            margin-bottom: 0.4rem;
+        }
+
+        .hero-banner .sub {
+            font-size: 1.05rem;
+            color: #5d6b55;
+            font-style: italic;
+            margin-top: 0.3rem;
+            border-top: 1px dashed #bfb5a5;
+            display: inline-block;
+            padding-top: 0.3rem;
+        }
+
+        .section {
+            margin: 2.6rem 0 2.2rem;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 400;
+            border-left: 4px solid #b5a594;
+            padding-left: 1rem;
+            margin-bottom: 1rem;
+            color: #33402e;
+        }
+
+        .section p {
+            margin: 0.9rem 0;
+            text-indent: 2em;
+            font-size: 1.02rem;
+        }
+
+        .pull-quote {
+            background: #f3efe9;
+            padding: 0.9rem 1.8rem;
+            margin: 1.8rem 0;
+            border-left: 6px solid #9a8c7b;
+            font-style: italic;
+            color: #4a5543;
+            border-radius: 0 18px 18px 0;
+            font-size: 1.05rem;
+            text-indent: 0;
+        }
+
+        .pull-quote strong {
+            font-style: normal;
+            font-weight: 500;
+            color: #2b3c26;
+        }
+
+        .highlight-box {
+            background: #f4f0ea;
+            border: 1px solid #dbd1c4;
+            padding: 1.2rem 1.8rem;
+            border-radius: 30px 8px 30px 8px;
+            margin: 2rem 0 0.8rem;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+        }
+
+        .highlight-box p {
+            text-indent: 0;
+            margin: 0.3rem 0;
+        }
+
+        .faq-mini {
+            margin: 2.2rem 0 1.2rem;
+            border-top: 1px solid #dcd5ca;
+            padding-top: 1.2rem;
+        }
+
+        .faq-item {
+            margin: 0.5rem 0;
+            padding: 0.3rem 0;
+        }
+
+        .faq-q {
+            font-weight: 500;
+            color: #44583e;
+        }
+
+        .faq-a {
+            margin-left: 1.2rem;
+            color: #4f5f49;
+            font-size: 0.97rem;
+        }
+
+        .site-link-sentence {
+            font-size: 1.1rem;
+            background: #f0ece4;
+            padding: 0.7rem 1.4rem;
+            border-radius: 50px;
+            display: inline-block;
+            margin: 1rem 0 0.6rem;
+            line-height: 1.5;
+        }
+
+        .site-link-sentence a {
+            color: #2f5a2a;
+            text-decoration: underline;
+            text-underline-offset: 4px;
+            text-decoration-thickness: 1.5px;
+            text-decoration-color: #b5aa96;
+            font-weight: 400;
+            transition: color 0.15s, text-decoration-color 0.2s;
+        }
+
+        .site-link-sentence a:hover {
+            color: #172e13;
+            text-decoration-color: #5f784c;
+        }
+
+        .footer-note {
+            text-align: right;
+            margin-top: 2.4rem;
+            padding-top: 1rem;
+            border-top: 1px solid #d7cec1;
+            font-size: 0.92rem;
+            color: #6c7b63;
+            font-style: italic;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #e0d8cd;
+            margin: 1.8rem 0;
+        }
+    </style>
+</head>
+<body>
+<div class="magazine-wrapper">
+
+    <!-- HERO 横幅 -->
+    <div class="hero-banner">
+        <h1>⚽ 足球直播 · 场次识别</h1>
+        <div class="sub">从一片信息中，快速找到你要看的比赛</div>
+    </div>
+
+    <!-- 背景说明：为什么需要“识别” -->
+    <div class="section">
+        <div class="section-title">一、不止是直播列表</div>
+        <p>打开一个足球直播网站，最常见的情形是：满屏的联赛缩写、时间、比分，但你想看的场次却要反复比对。大多数直播页面把内容铺得很满，却没有给眼睛留出呼吸的节奏。而一个以“识别”为出发点的版面，会让你在一瞥之间就知道——今晚哪场是焦点，哪场已经结束，哪场值得你放下手头的事。</p>
+        <p>这也是我们梳理 <strong>qq-zuqiutv.com</strong> 信息结构时的小小初衷：把比赛信息像杂志文章一样排布，用层级、色块和间距引导视线，而不是让所有比赛挤在同一张表格里。当然，最终页面仍是功能性的，但视觉上的从容感，会让找比赛这件事变得安静许多。</p>
+
+        <div class="pull-quote">
+            “好的直播导航，不是给你最多选项，而是让你最快找到那个对的选项。” <br>—— 一位常常在周六深夜看球的人
+        </div>
+    </div>
+
+    <!-- 三段自然介绍：从用户角度展开 -->
+    <div class="section">
+        <div class="section-title">二、你会在页面里看到什么</div>
+
+        <p><strong>比赛卡片优先于表格</strong> —— 每个直播入口都附带联赛徽标、时间轴和实时状态，用圆角卡片区分进行中、未开始和已结束。你不需要先看一行小字“vs”，再去找比分；所有关键信息都在同一视野层级里。</p>
+
+        <p><strong>常用联赛置顶与标签筛选</strong> —— 英超、西甲、欧冠、亚冠……你常看的联赛会被收集在顶部导航栏下方的一排“短标签”里，点击即可过滤。这和杂志专题的“目录”类似：先给你一个全景，再让你快速跳到自己感兴趣的章节。</p>
+
+        <p><strong>赛前分析与实时动态并置</strong> —— 对于焦点赛事，页面会在直播入口旁边附带一段简述：伤停情况、近期交锋、天气影响等。这些文字很短，不干扰直播，但足够让你在点进去之前建立基本预期。就像一篇赛前简报，但更克制。</p>
+    </div>
+
+    <!-- 引用 + 提示框混合 -->
+    <div class="highlight-box">
+        <p><strong>一个小提示</strong>：如果你只关心某一场比赛的进程，可以直接在页面搜索框输入主队或客队名称（中文或英文均可），页面会高亮显示对应的直播入口。这个功能隐藏得有点深，但非常实用。</p>
+    </div>
+
+    <!-- FAQ 摘要：解决常见疑惑 -->
+    <div class="faq-mini">
+        <div class="section-title">三、常见疑问 · 简短回答</div>
+
+        <div class="faq-item">
+            <div class="faq-q">Q：页面上的直播源都是免费的吗？</div>
+            <div class="faq-a">大部分场次提供免费线路，少数高清源可能需要注册或积分，具体以进入直播间后显示为准。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">Q：为什么有时候比赛开始前半小时才显示链接？</div>
+            <div class="faq-a">直播源通常在开赛前30–60分钟由合作方推送，太早出现链接反而可能失效。建议赛前15分钟刷新页面。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">Q：手机端看直播适配怎么样？</div>
+            <div class="faq-a">页面采用自适应布局，在手机浏览器上卡片会纵向排列，比分和按钮都足够大，误触概率低。</div>
+        </div>
+    </div>
+
+    <!-- 嵌入链接的自然句子 -->
+    <div style="margin: 2rem 0 0.6rem; text-align: center;">
+        <div class="site-link-sentence">
+            如果你需要确认今晚的赛程安排，可以直接前往 <a href="https://qq-zuqiutv.com">足球直播</a> 页面，按联赛或时间浏览。
+        </div>
+        <p style="margin-top: 0.6rem; font-size: 0.95rem; color: #5f6e57;">每场比赛都附带实时状态标识，便于快速筛选。</p>
+    </div>
+
+    <!-- 页尾提示 -->
+    <div class="footer-note">
+        — 杂志式导航 · 让找比赛更像阅读 —
+    </div>
+
+</div>
+</body>
+</html>
